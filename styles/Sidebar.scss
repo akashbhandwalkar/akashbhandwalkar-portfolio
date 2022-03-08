@@ -1,0 +1,11 @@
+.sidebar-wrapper {
+    width: $SIDEBAR_WIDTH;
+    height: calc(100vh - $FOOTER_HEIGHT);
+    background-color: #FAFBFB;
+    border-right: 1px solid $BORDER_COLOR;
+
+    position: fixed;
+    left: 0;
+    top: $HEADER_HEIGHT;
+}
+

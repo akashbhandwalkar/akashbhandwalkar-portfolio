@@ -1,0 +1,8 @@
+.header-wrapper {
+    height: $HEADER_HEIGHT;
+    border-bottom: 2px solid $BORDER_COLOR;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
