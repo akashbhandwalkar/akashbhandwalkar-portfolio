@@ -5,4 +5,11 @@
     top: 0;
     left: 0;
     width: 100%;
+    background: url('../public/assets/header-bg.jpg');
+    color: white;
+    display: flex;
+    align-items: center;
+    span {
+        margin-left: 40px;
+    }
 }

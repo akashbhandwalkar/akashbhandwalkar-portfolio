@@ -7,5 +7,41 @@
     position: fixed;
     left: 0;
     top: $HEADER_HEIGHT;
+
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    .profile-pic-wrapper {
+        width: calc($SIDEBAR_WIDTH / 2);
+        height: calc($SIDEBAR_WIDTH / 2);
+        border-radius: 50%;
+        border: 2px solid red;
+        background: url("../public/assets/akash_bhandwalkar.jpeg");
+        background-size: cover;
+
+    }
+    .profile-pic {
+        width: 100%;
+        height: fit-content;
+        border-radius: 50%;
+    }
+    .navbar {
+        list-style: none;
+        color: #222;
+
+        .nav-item {
+            cursor: pointer;
+            margin: 5px;
+            &:hover {
+                text-decoration: underline;
+                color: red;
+            }
+        }
+    }
+    .position {
+        position: 10px 20px;
+    }
 }
 
