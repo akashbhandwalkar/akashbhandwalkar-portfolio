@@ -1,3 +1,6 @@
+
+import Link from 'next/link'
+
 export default function Sidebar({ title }) {
     return (
       <div className="sidebar-wrapper">
@@ -11,11 +14,11 @@ export default function Sidebar({ title }) {
           </div>
 
           <ul className="navbar">
-            <li className="nav-item"> Articles </li>
-            <li className="nav-item"> Projects </li>
-            <li className="nav-item"> Games </li>
-            <li className="nav-item"> CSS Art </li>
-            <li className="nav-item"> Drafts / Learnings </li>
+            <li className="nav-item"> <Link href="/articles"> Articles </Link> </li>
+            <li className="nav-item"> <Link href="/projects"> Projects </Link> </li>
+            <li className="nav-item"> <Link href="/games"> Games </Link> </li>
+            <li className="nav-item"> <Link href="/css-arts"> CSS Arts </Link> </li>
+            <li className="nav-item"> <Link href="/learning"> Drafts / learning </Link> </li>
           </ul>
         </div>
     )

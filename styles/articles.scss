@@ -1,0 +1,28 @@
+.recent-post-wrapper {
+    padding: 10px 40px;
+    .articles {
+        list-style: none;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        .article {
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+            color: blue;
+            min-width: 400px;
+            display: flex;
+            justify-content: space-between;
+            a {
+                text-decoration: none;
+                &:hover {
+                    color: red;
+                }
+            }
+            .published-date {
+                font-size: 1rem;
+                color: #222;
+            }
+        }
+    }
+}
