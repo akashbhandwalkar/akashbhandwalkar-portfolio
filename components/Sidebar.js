@@ -15,10 +15,10 @@ export default function Sidebar({ title }) {
 
           <ul className="navbar">
             <li className="nav-item"> <Link href="/articles"> Articles </Link> </li>
-            <li className="nav-item"> <Link href="/projects"> Projects </Link> </li>
-            <li className="nav-item"> <Link href="/games"> Games </Link> </li>
+            {/* <li className="nav-item"> <Link href="/projects"> Projects </Link> </li>
+            <li className="nav-item"> <Link href="/games"> Games </Link> </li> */}
             <li className="nav-item"> <Link href="/css-arts"> CSS Arts </Link> </li>
-            <li className="nav-item"> <Link href="/learning"> Drafts / learning </Link> </li>
+            {/* <li className="nav-item"> <Link href="/learning"> Drafts / learning </Link> </li> */}
           </ul>
         </div>
     )
