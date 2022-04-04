@@ -21,7 +21,7 @@ function Articles({ content, data }) {
 {/* 
       <Layout secondaryPage noHead> */}
         <div className='page-wrapper' style={{ padding: '10px'}}>
-          <Link href="/" as="/">
+          <Link href="/articles" as="/articles">
             <a className="back-button">
               back
             </a>

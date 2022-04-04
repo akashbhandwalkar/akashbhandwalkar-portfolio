@@ -1,0 +1,45 @@
+
+.css-arts-wrapper {
+    padding: 30px 20px;
+    display: grid;
+    row-gap: 20px;
+    @media only screen and (max-width: 900px) {
+        grid-template-columns: 1fr;
+    }
+    @media only screen and(min-width: 1001px) and (max-width: 1400px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media only screen and(min-width: 1401px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+  
+  .css-art {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  iframe {
+    border: none;
+  }
+
+  .pagination-wrapper {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+    .buttons {
+        display: flex;
+        justify-content: end;
+    }
+    .button {
+        background-color: #d3372e;
+        border: none;
+        padding: 5px 10px;
+        color: white;
+        margin: 5px;
+        cursor: pointer;
+    }
+  }
