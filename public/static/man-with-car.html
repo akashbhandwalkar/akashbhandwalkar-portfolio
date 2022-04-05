@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: #0ec3af;
+    font-family: sans-serif;
+    padding: 0 30px;
+}
+
+.car-container {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+}
+
+.driver-man-container {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    transform: scale(0.5);
+}
+
+.driver-man-container .face-container {
+    position: absolute;
+    top: 15%;
+    left:40%;
+    width: 20%;
+    height: 20%;
+    border-radius: 0 0 50% 50%;
+    background: linear-gradient(#fdb2a3, #f1bd9d);
+    animation: nod-head 1s infinite;
+}
+@keyframes nod-head {
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+.driver-man-container .face-container .hair-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.driver-man-container .face-container .hair-container div {
+    position: absolute;
+    background: linear-gradient(90deg, #d2003a, #d2003a);
+    border-top-right-radius: 65%;
+    border-bottom-left-radius: 65%;
+    width: 35%;
+    height: 80%;
+
+}
+
+.driver-man-container .face-container .hair-container div:nth-child(1) {
+    position: absolute;
+    left:-20%;
+    z-index: -1;
+
+}
+.driver-man-container .face-container .hair-container div:nth-child(2) {
+    position: absolute;
+    right:-20%;
+}
+
+.driver-man-container .face-container .hair-container div:nth-child(3) {
+    position: absolute;
+    width: 110%;
+    height: 50%;
+    left:-10%;
+    background: linear-gradient(90deg, #dc4943, #dc4943);
+    top: -30%;
+    border-radius: 100% 0% 100% 0% / 50% 50%;
+    transform: rotate(0deg);
+}
+
+.driver-man-container .face-container .eyes-container {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 30%;
+    width: 90%;
+}
+.driver-man-container .face-container .eyes-container div {
+    height: 8px;
+    width: 8px;
+    background: black;
+    border-radius: 50%;
+}
+
+.driver-man-container .face-container .mouth{
+    position: absolute;
+    bottom: 20%;
+    left: 25%;
+    width: 30%;
+    height: 30%;
+    border: 5px solid #dc8e7b;
+    border-radius: 50%;
+}
+.driver-man-container .face-container .mouth::after {
+    content: "";
+    position: absolute;
+    width: 140%;
+    height: 100%;
+    top: -25%;
+    left: -15%;
+    background: linear-gradient(#fdb2a3, #f1bd9d);
+}
+
+.driver-man-container .face-container .nose {
+    display: flex;
+    position: absolute;
+    bottom: 40%;
+    left: 32%;
+    width: 20%;
+    justify-content: space-around;
+}
+
+.driver-man-container .face-container .nose div{
+    background-color: #d3957a;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.driver-man-container .face-container  .ear {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f3bd9b;
+    right: 8px;
+    top: 35%;
+}
+.driver-man-container .tshirt {
+    position: absolute;
+    
+    background: linear-gradient(#b11154, #a91050);
+    height: 100%;
+    width: 70%;
+    z-index: -1;
+    border-radius: 100% 100% 100% 100% / 50% 50%;
+}
+
+.hand-container {
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    height: 30%;
+    top: 30%;
+    left: 40%;
+}
+
+.left-hand .shoulder-to-elbow, .left-hand .elbow-wrist{ 
+    position: absolute;
+    background-color: #d81965;
+    
+
+}
+
+.left-hand .shoulder-to-elbow {
+    border-radius: 20px;
+    height: 40px;
+    width: 70%;
+    right: 43px;
+    top: 46px;
+    transform: rotate(-45deg);
+    transform-origin: top;
+}
+.left-hand .elbow-wrist::after{
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -55%;
+    width: 50%;
+    height: 120%;
+    background: #f1be9d;
+    border-radius: 20px;
+    z-index: 3;
+
+ }
+ .left-hand .elbow-wrist::before{
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: -10%;
+    width: 20px;
+    height:20px;
+    background: #e68a84;
+    border-radius: 50%;
+    z-index: -1;
+ }
+.left-hand .elbow-wrist {
+    border-radius: 20px;
+    height: 40px;
+    width: 70%;
+    right: 60%;
+    top: 42%;
+    transform-origin: top;
+}
+
+.hand-container .right-hand {
+    position: absolute;
+    background-color: #7b0137;
+    z-index: -3;
+    top: 10%;
+    left: -8%;
+    width: 40px;
+    height: 50%;
+    transform: rotate(38deg);
+}
+
+.stering {
+    position: absolute;
+    top: 36%;
+    left: 9%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 10px solid #163039;
+    z-index: 2;
+
+}
+
+.car-container .left-draw {
+    position: absolute;
+    background-color: #12262e;
+    width: 50%;
+    height: 18%;
+    border-radius: 80px;
+    top: 50%;
+    lefT: 25%;
+    z-index: 5;
+}
+.car-container .left-draw::after{
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 15%;
+    height: 10px;
+    background: #b8c9d6;
+    border-radius: 15px;
+}
+
+.car-container .left-draw::before{
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 10px;
+    height: 10px;
+    background: #fdfba9;
+    border-radius: 50%;
+}
+
+.front-draw {
+    position: absolute;
+    background-color: #2c4e5d;
+    width: 50%;
+    height: 18%;
+    border-radius: 80px;
+    top: 50%;
+    left: 3%;
+    z-index: 4;
+}
+
+
+.front-draw::after {
+    content: "";
+    position: absolute;
+    background-color: #132530;
+    height: 25px;
+    width: 30%;
+    top: 50%;
+    left: 7%;
+    border-radius: 20px;
+}
+
+.headline div{
+    position: absolute;
+    top: 10%;
+    border-radius: 20px;
+    background-color: #15262f;
+    width: 45px;
+    height: 30px;
+}
+.headline div:nth-child(1) {
+
+}
+.headline div:nth-child(2) {
+    left: 30%;
+}
+.headline div::after {
+    content: "";
+    position: absolute;
+    background-color: #fffb9e;
+    width: 60%;
+    height: 100%;
+    border-radius: 50%;
+}
+.glass-container {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    border: 5px solid #c5f9ff;
+    width: 25%;
+    height: 20%;
+    border-radius: 35px;
+}
+.glass-container::after {
+    content: "";
+    position: absolute;
+    background: #c5f9ff;
+    width: 20%;
+    height: 110%;
+    left: 25%;
+    top: -2%;
+    transform: rotate(30deg) skewY(-25deg);
+    transform-origin: top;
+}
+.glass-container::before {
+    content: "";
+    position: absolute;
+    background: #c5f9ff;
+    width: 6px;
+    height: 110%;
+    left: 52%;
+    top: -2%;
+    transform: rotate(30deg) skewY(-25deg);
+    transform-origin: top;
+}
+
+.seat-container{
+    position: absolute;
+    background-color: #bbc8d3;
+    height: 8%;
+    width: 10%;
+    top: 43%;
+    left: 50%;
+    z-index: -1;
+}
+.seat-container::after {
+    content: "";
+    position: absolute;
+    background-color: #dfe8f0;
+    height: 100%;
+    width: 40%;
+    right: -20%;
+    border-radius: 20px;
+}
+
+.front-plate {
+    position: absolute;
+    width: 30%;
+    height: 30px;
+    background-color: #dfe8f0;
+    top: 63%;
+    z-index: 6;
+    border-radius: 20px;
+}
+
+.front-plate-after {
+    content: "";
+    position: absolute;
+    top: 63%;
+    width: 10%;
+    height: 30px;
+    background-color: #b6c4d0;
+    left: 25%;
+    border-radius: 20px;
+    z-index: 5;
+}
+.tyre-container {
+    position: absolute;
+    width: 80%;
+    height: 20%;
+    top: 60%;
+}
+.tyre-container-shadow {
+    top: 60%;
+    position: absolute;
+    width: 80%;
+    height: 20%;
+    z-index: -1;
+}
+
+.tyre-container .tyre {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px dashed black;
+    animation: rotate-wheel 30s infinite;
+}
+
+@keyframes rotate-wheel {
+    100% {
+        transform: rotate(-7200deg);
+    }
+}
+
+.tyre-container .tyre:nth-child(1) {
+    z-index: -1;
+    left: 10%;
+    background-color: #284855;
+    
+}
+.tyre-container .tyre:nth-child(2) {
+    left: 45%;
+    z-index: 10;
+    background: radial-gradient(circle at 40px 40px, 
+    #b4c3cf 0, #b4c3cf 30%,
+    #48748a 30%, #48748a 60%,
+    #3a5c6b 60%, #3a5c6b 100%
+    );
+
+}
+.tyre-container .tyre:nth-child(3) {
+    left: 75%;
+    z-index: 10;
+    background: radial-gradient(circle at 40px 40px, 
+    #b4c3cf 0, #b4c3cf 30%,
+    #48748a 30%, #48748a 60%,
+    #3a5c6b 60%, #3a5c6b 100%
+    );
+}
+
+.tyre-container .tyre::after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 47%;
+    width: 4px;
+    height: 10px;
+    background-color: black;
+}
+.tyre-container .tyre::before {
+    content: "";
+    position: absolute;
+    top: 49%;
+    left: 44%;
+    width: 10px;
+    height: 4px;
+    background-color: black;
+}
+
+
+.tyre-container .back-plate-after{
+    content: "";
+    position: absolute;
+    left: 87%;
+    top: 25%;
+    width: 10%;
+    height: 25px;
+    background-color: #b6c5ce;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.tyre-container-shadow {
+    position: absolute;
+    width: 80%;
+    height: 25px;
+    border-radius: 20px;
+    background-color: #0c8b87;
+    z-index: -1;
+    left: 0%;
+    top: 73%;
+}
+    </style>
+</head>
+<body>
+    <div class="driver-man-container">
+        <div class="face-container">
+            <div class="face">
+                <div class="eyes-container">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="hair-container">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+
+                </div>
+                <div class="mouth"></div>
+                <div class="ear"></div>
+                <div class="nose">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="hand-container">
+            <div class="tshirt"></div>
+            <div class="left-hand">
+                <div class="shoulder-to-elbow"></div>
+                <div class="elbow-wrist"></div>
+            </div>
+            <div class="right-hand"></div>
+        </div>
+        <div class="stering"></div>
+    </div>
+    <div class="car-container">
+        <div class="glass-container"></div>
+        <div class="seat-container"></div>
+        <div class="left-draw"></div>
+        <div class="front-draw">
+            <div class="headline">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="front-plate"></div>
+        <div class="front-plate-after"></div>
+      
+        <div class="tyre-container">
+            <div class="tyre"></div>
+            <div class="tyre"></div>
+            <div class="tyre"></div>
+
+            <div class="back-plate-after"></div>
+        </div>
+        <div class="tyre-container-shadow">
+        </div>
+
+    </div>
+</body>
+</html>

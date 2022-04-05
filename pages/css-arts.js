@@ -1,24 +1,74 @@
 import { useState } from "react";
-
-const LIMIT = 4;
+import Demo from '../components/Demo';
+const LIMIT = 6;
 const cssArts = props => {
 
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState(4);
 
-    const ALL_TEMPLATES = [
-        "./static/lightening-car.html",
-        "./static/boy-illustration.html",
-        "./static/bird-with-animation.html",
-        "./static/glowing-city.html",
-        "./static/gym-boy.html",
-        "./static/boy-sitting-on-bench.html",
-        "./static/holiday-house.html",
-        "./static/swimming-pool.html",
-        "./static/night-view.html",
-        "./static/castle-building.html",
-        "./static/bus-in-lightneing-view.html"
-    ];
-
+    const ALL_TEMPLATES = [{
+        template: "./static/lightening-car.html",
+        codepen: 'https://codepen.io/__akash__19/pen/pobgbYQ'
+    },{
+        template: "./static/glowing-city.html",
+        codepen: 'https://codepen.io/__akash__19/pen/YzwmveX'
+    },{
+        template: "./static/boy-illustration.html",
+        codepen: 'https://codepen.io/__akash__19/pen/NWNvaNB'
+    },{
+        template: "./static/chemistry-lab.html",
+        codepen: 'https://codepen.io/__akash__19/pen/pobgbYQ'
+    },{
+        template: "./static/night-view.html",
+        codepen: 'https://codepen.io/__akash__19/pen/XWdpmJo'
+    }, {
+        template: './static/city-with-mirror.html',
+        codepen: 'https://codepen.io/__akash__19/pen/rNxopox'
+    }, {
+        template:  "./static/bird-with-animation.html",
+        codepen: 'https://codepen.io/__akash__19/pen/QWKpyMm'
+    },{
+        template: "./static/gym-boy.html",
+        codepen: 'https://codepen.io/__akash__19/pen/zYqpqXg'
+    },{
+        template: "./static/boy-sitting-on-bench.html",
+        codepen: 'https://codepen.io/__akash__19/pen/GRoVJLE'
+    },{
+        template: "./static/holiday-house.html",
+        codepen: 'https://codepen.io/__akash__19/pen/zYKpEeL'
+    },{
+        template: "./static/swimming-pool.html",
+        codepen: 'https://codepen.io/__akash__19/pen/VweJVrr'
+    },{
+        template:  "./static/castle-building.html",
+        codepen: 'https://codepen.io/__akash__19/pen/VwjLJgW'
+    },{
+        template: "./static/bus-in-lightneing-view.html",
+        codepen: 'https://codepen.io/__akash__19/pen/zYKVLMd'
+    }, {
+        template: "./static/moving-car.html",
+        codepen: "https://codepen.io/__akash__19/pen/LYGXwYZ"
+    },{
+        template: './static/pcmc-bus.html',
+        codepen: 'https://codepen.io/__akash__19/pen/QWNbprJ'
+    }, {
+        template: './static/bee.html',
+        codepen: 'https://codepen.io/__akash__19/pen/MWyweYv'
+    },  {
+        template: './static/chemistry-lab-2.html',
+        codepen: 'https://codepen.io/__akash__19/pen/bGEPwKw'
+    }, {
+        template: './static/table-tenis-bat.html',
+        codepen: 'https://codepen.io/__akash__19/pen/yLJYEPX'
+    }, {
+        template: './static/man-with-car.html',
+        codepen: 'https://codepen.io/__akash__19/pen/abNmYrJ'
+    }, {
+        template: './static/man-with-mustache.html',
+        codepen: 'https://codepen.io/__akash__19/pen/XWdrRKE'
+    }, {
+        template: './static/man-with-bald.html',
+        codepen: 'https://codepen.io/__akash__19/pen/qBadvPp'
+    }];
     const templates = ALL_TEMPLATES.slice((step - 1) * LIMIT, step * LIMIT);
 
     const nextPage = () => {
@@ -36,8 +86,8 @@ const cssArts = props => {
         <div className="page-wrapper" style={{ paddingBottom: '20px'}}>
             <div className="css-arts-wrapper">
                 {
-                    templates.map( (template, index) => {
-                        return(<iframe key={index} scrolling="no" style={{ overflow: "hidden"}} className="css-art" src={template}></iframe>)
+                    templates.map( (data, index) => {
+                        return(<Demo data={data} key={index} />)
                     })
                 }
                 

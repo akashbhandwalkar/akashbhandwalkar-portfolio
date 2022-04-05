@@ -1,6 +1,6 @@
 
 .css-arts-wrapper {
-    padding: 30px 20px;
+    padding: 50px 20px;
     display: grid;
     row-gap: 20px;
     @media only screen and (max-width: 900px) {
@@ -23,7 +23,7 @@
   }
   
   iframe {
-    border: none;
+    border: 1px solid #0e1428;
   }
 
   .pagination-wrapper {
@@ -32,7 +32,7 @@
       top: 10px;
     .buttons {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
     }
     .button {
         background-color: #d3372e;
@@ -43,3 +43,20 @@
         cursor: pointer;
     }
   }
+
+.demo-wrapper {
+  position: relative;
+  .redirect-to-codepen {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 400px;
+    border: none;
+    outline: none;
+    background-color: #0e1428;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
