@@ -43,5 +43,9 @@
     .position {
         position: 10px 20px;
     }
+
+    @media screen and (max-width: 999px) {
+        display: none;
+    }
 }
 

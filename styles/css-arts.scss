@@ -3,10 +3,10 @@
     padding: 50px 20px;
     display: grid;
     row-gap: 20px;
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 799px) {
         grid-template-columns: 1fr;
     }
-    @media only screen and(min-width: 1001px) and (max-width: 1400px) {
+    @media only screen and(min-width: 800px) and (max-width: 1400px) {
         grid-template-columns: 1fr 1fr;
     }
     @media only screen and(min-width: 1401px) {
@@ -29,7 +29,7 @@
   .pagination-wrapper {
       position: fixed;
       right: 10px;
-      top: 10px;
+      top: 70px;
     .buttons {
         display: flex;
         justify-content: flex-end;
@@ -46,10 +46,11 @@
 
 .demo-wrapper {
   position: relative;
+  margin: 0 auto;
   .redirect-to-codepen {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 4px;
     height: 50px;
     width: 400px;
     border: none;
@@ -58,5 +59,9 @@
     color: white;
     font-weight: 600;
     cursor: pointer;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
   }
 }

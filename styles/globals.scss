@@ -35,6 +35,11 @@ main {
 .page-wrapper {
   margin-left: $SIDEBAR_WIDTH;
   margin-top: $HEADER_HEIGHT;
+
+  @media screen and (max-width: 999px) {
+    margin-left: 0;
+     margin-top: 0;
+  }
 }
 
 code {

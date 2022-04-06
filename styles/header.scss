@@ -6,9 +6,11 @@
     left: 0;
     width: 100%;
     background: url('../public/assets/header-bg.jpg');
-    color: white;
+    background-color: black;
+    color: #fff;
     display: flex;
     align-items: center;
+    z-index: 3;
     span {
         margin-left: 40px;
     }
