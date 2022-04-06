@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Demo from '../components/Demo';
+import Head from 'next/head';
+
 const LIMIT = 6;
 const cssArts = props => {
 
-    const [step, setStep] = useState(4);
+    const [step, setStep] = useState(1);
 
     const ALL_TEMPLATES = [{
         template: "./static/lightening-car.html",
@@ -83,31 +85,38 @@ const cssArts = props => {
         })
     }
     return(
-        <div className="page-wrapper" style={{ paddingBottom: '20px'}}>
-            <div className="css-arts-wrapper">
-                {
-                    templates.map( (data, index) => {
-                        return(<Demo data={data} key={index} />)
-                    })
-                }
-                
-            </div>
-
-            <div className="pagination-wrapper">
-                <div className="buttons">
-                    { 
-                        step > 1 &&  <button type="button" className="button prev" onClick={prevPage}> Prev </button>
-                    }
-
+        <div>
+             <Head>
+                <title> Akash Bhandwalkar | CSS Arts </title>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+        
+            <div className="page-wrapper" style={{ paddingBottom: '20px'}}>
+                <div className="css-arts-wrapper">
                     {
-                       step < Math.ceil(ALL_TEMPLATES.length / LIMIT) && <button type="button" className="button next" onClick={nextPage}> Next </button>
+                        templates.map( (data, index) => {
+                            return(<Demo data={data} key={index} />)
+                        })
                     }
-                   
                     
                 </div>
-               
-            </div>
 
+                <div className="pagination-wrapper">
+                    <div className="buttons">
+                        { 
+                            step > 1 &&  <button type="button" className="button prev" onClick={prevPage}> Prev </button>
+                        }
+
+                        {
+                        step < Math.ceil(ALL_TEMPLATES.length / LIMIT) && <button type="button" className="button next" onClick={nextPage}> Next </button>
+                        }
+                    
+                        
+                    </div>
+                
+                </div>
+
+            </div>
         </div>
     )
 }

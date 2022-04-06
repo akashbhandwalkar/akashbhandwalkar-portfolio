@@ -19,12 +19,20 @@ How does promise work in JavaScript?
 
 // Returns User details in Promise object
 const getUserDetails = (id) => {
-  return http.get(`domain.com/${id}`);
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      resolve({ 
+        id: 1,
+        enrollmentNo: '123'
+      });
+    }, 300);
+  })
 }
 
 // Handling Asynchronus Function
 getUserDetails(1)
   .then(user => {
+     console.log(user);
     // Handle success here
   })
   .catch(error => {
@@ -45,13 +53,26 @@ Another example where we are handling sequencial asynchonus call.
 // Returns User details in Promise object
 
 const getUserDetails = (id) => {
-  return http.get(`domain.com/user/${id}`);
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      resolve({ 
+        id: 1,
+        enrollmentNo: '123'
+      });
+    }, 300);
+  })
 }
 
 // Returns User's result based on enrollment Id received in earlier Promise object
 
 const getResult = (enrollmentNo) => {
-  return http.get(`domain.com/result/${enrollmentNo}`);
+   return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      resolve({ 
+        result: 'You have passed this exam'
+      });
+    }, 300);
+  })
 }
 
 // Handling Asynchronus Function
@@ -60,9 +81,11 @@ getUserDetails(1)
     return getResult(user.enrollmentNo)
   })
   .then(result => {
+
     // Handle result response here
   })
   .catch(error => {
+
     // Handle error here
   })
 
@@ -106,6 +129,77 @@ console.log(result); // Promise {<rejected>: 'something went wrong'}
 
 ```
 
-As you see we are returning string from it but when you print the result it says **promise**.
+
+
+## What is await?
+
+The javascript keyword await is used to wait for the data from the asynchronus function.
 
 ---
+
+Example one when success is returned.
+
+```js
+
+const getUserDetails = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      resolve({ 
+        id: 1,
+        enrollmentNo: '123'
+      });
+    }, 300);
+  })
+}
+
+const user = await getUserDetails();
+
+console.log(user); // 'You have passed the exam'
+
+```
+
+Our asynchronus function, as you can see, returns the data without error, hence our result prints the data. One more thing to notice, our *console.log *waits until the *getUserDetails* resolves.
+
+---
+
+Example two when error is returned.
+
+```js
+
+const getUserDetails = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      reject('something went wrong');
+    }, 300);
+  })
+}
+
+const user = await getUserDetails();
+
+console.log(user); // Uncaught something went wrong
+
+```
+Our asynchronus function, as you can see, returns the data **with** error, hence we see the uncaught error.
+
+---
+
+## How to handle the erros using await
+
+To handle any possible errors received from the asynchronus function, we can utilise the try/catch block.
+
+```js
+
+const getUserDetails = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(function() {
+      reject('something went wrong');
+    }, 300);
+  })
+}
+
+try {
+  const user = await getUserDetails();
+  // Handle success here
+} catch(error) {
+  // Handle error here
+}
