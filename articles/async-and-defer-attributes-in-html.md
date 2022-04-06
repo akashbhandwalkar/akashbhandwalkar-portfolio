@@ -1,9 +1,8 @@
 ---
-title: "Async and await in JavaScript!"
-date: "2022-04-04"
+title: "Async and defer atributes in HTML!"
+date: "2022-04-06"
 og:
-  description: "Async and await are javascript keywords used to handle asynchronus programming."
-  image: "https://telmo.im/og/youdontsuck.png"
+  description: "async and defer are html attributes used on script tag to efficiently use the parsing, downloading and execution phase."
 author:
   twitter: "akash_webdev"
   name: "Akash Bhandwalkar"

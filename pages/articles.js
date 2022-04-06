@@ -18,18 +18,18 @@ function Articles() {
 
                             <span className='published-date'> 04 April, 2022 </span>
                         </li>
-                        <li className="article"> 
+                        {/* <li className="article"> 
                             <Link href='/articles/async-await-in-javascript'> Coming soon... Everything you should know about position property in css </Link> 
                             <span className='published-date'> 26 January, 2022 </span>    
-                        </li>
+                        </li> */}
                         <li className="article"> 
-                            <Link href='/articles/async-await-in-javascript'>Coming soon...  async and defer html attributes </Link> 
+                            <Link href='/articles/async-and-defer-attributes-in-html'>Coming soon...  async and defer html attributes </Link> 
                             <span className='published-date'> 26 January, 2022 </span>
                         </li>
-                        <li className="article"> 
+                        {/* <li className="article"> 
                             <Link href='/articles/async-await-in-javascript'> Coming soon...  Inheritance in javascript </Link> 
                             <span className='published-date'> 26 January, 2022 </span>
-                        </li>
+                        </li> */}
 
                 </ul>
 
