@@ -27,10 +27,11 @@ export default function Sidebar({ title }) {
 
           <ul className="navbar">
             <li className="nav-item"> <Link href="/articles"> Articles </Link> </li>
-            {/* <li className="nav-item"> <Link href="/projects"> Projects </Link> </li> */}
             <li className="nav-item"> <Link href="/1-to-1-meetings"> Free mentorship </Link> </li> 
             <li className="nav-item m-4"> <Link href="/css-arts"> CSS Arts </Link> </li>
             <li className="nav-item"> <Link href="/tech-talks"> Tech Talks </Link> </li>
+            <li className="nav-item"> <a target="_blank" href="https://www.buymeacoffee.com/akash19"> Donate </a> </li>
+
           </ul>
         </div>
     )
