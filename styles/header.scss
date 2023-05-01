@@ -15,4 +15,16 @@
     span, i {
         margin: 0 20px;
     }
+    .mobile-only {
+        .navbar {
+            display: flex;
+            list-style: none;
+            li {
+                margin: 0 10px;
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
 }
