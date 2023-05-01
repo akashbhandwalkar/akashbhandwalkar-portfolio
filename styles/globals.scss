@@ -1,10 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import './variables.scss';
 @import './Sidebar.scss';
 @import './header.scss';
 @import './Footer.scss';
 @import './articles.scss';
 @import './css-arts.scss';
-
+@import './tech-talk.scss';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 html,
 body {
   
@@ -39,7 +43,6 @@ main {
 
   @media screen and (max-width: 999px) {
     margin-left: 0;
-     margin-top: 0;
   }
 }
 

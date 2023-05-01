@@ -7,7 +7,7 @@
     position: fixed;
     left: 0;
     top: $HEADER_HEIGHT;
-
+    z-index: 2;
     display: flex;
     // justify-content: center;
     align-items: center;
@@ -42,10 +42,6 @@
     }
     .position {
         position: 10px 20px;
-    }
-
-    @media screen and (max-width: 999px) {
-        display: none;
     }
 }
 

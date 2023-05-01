@@ -6,10 +6,10 @@
     @media only screen and (max-width: 799px) {
         grid-template-columns: 1fr;
     }
-    @media only screen and(min-width: 800px) and (max-width: 1400px) {
+    @media only screen and (min-width: 800px) and (max-width: 1400px) {
         grid-template-columns: 1fr 1fr;
     }
-    @media only screen and(min-width: 1401px) {
+    @media only screen and (min-width: 1401px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
