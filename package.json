@@ -26,7 +26,8 @@
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "simple-icons": "^2.9.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "antd": "5.4.6"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.2.5"

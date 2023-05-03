@@ -26,6 +26,10 @@ function Articles() {
                             <Link href='/articles/async-and-defer-attributes-in-html'>Coming soon...  async and defer html attributes </Link> 
                             <span className='published-date'> 26 January, 2022 </span>
                         </li>
+                        <li className="article"> 
+                            <Link href='/articles/deep-dive-into-react-fiber-object'>Deep dive into React's Virtual Dom node | React Fiber object </Link> 
+                            <span className='published-date'> 3 May, 2023 </span>
+                        </li>
                         {/* <li className="article"> 
                             <Link href='/articles/async-await-in-javascript'> Coming soon...  Inheritance in javascript </Link> 
                             <span className='published-date'> 26 January, 2022 </span>
