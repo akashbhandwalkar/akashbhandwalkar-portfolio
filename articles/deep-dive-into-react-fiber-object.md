@@ -80,6 +80,8 @@ Now, we are set to know what React.createElement returns to us.
     {
         $$typeof: Symbol(react.element),
         type: 'span',
+        ref: null,
+        key: null,
         props: {
             children: '0',
         }
@@ -87,7 +89,8 @@ Now, we are set to know what React.createElement returns to us.
     {
         $$typeof: Symbol(react.element),
         type: 'button',
-        onClick: 
+        ref: null,
+        key: null,
         props: {
             children: 'click me',
             onClick: () => { increment() }
@@ -97,115 +100,11 @@ Now, we are set to know what React.createElement returns to us.
 
 ```
 
-## What is async?
+Now, let's debug through code and see what react returns on the top level.
 
-The javascript keyword async is used to declare asynchronous functions, and the await keyword is allowed to be used inside them. When you declare a function async, it responds with a promise. Returning a promise from an async function is not required, but whatever you return from it is received as a promise by its callee.
-
----
-
-Example one when success is returned.
-
-```js
-
-const getResult = async () => {
-  return 'You have passed the exam';
-}
-
-const result = getResult();
-
-console.log(result); // Promise {<fulfilled>: 'You have passed the exam'}
-
-```
-
-As you see we are returning string from it but when you print the result it says **promise**.
-
----
-
-Example two when error is returned.
-
-```js
-
-const getResult = async () => {
-  trhow 'something went wrong';
-}
-
-const result = getResult();
-
-console.log(result); // Promise {<rejected>: 'something went wrong'}
-
-```
+![Alt text](/assets/mini-version-of-fiber-node.png)
 
 
+Now, we are ready to see detailed fiber node when hooks and complex logic is attached. React saves a lot of information in terms of dependencies, effects.
 
-## What is await?
-
-The javascript keyword await is used to wait for the data from the asynchronus function.
-
----
-
-Example one when success is returned.
-
-```js
-
-const getUserDetails = (id) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(function() {
-      resolve({ 
-        id: 1,
-        enrollmentNo: '123'
-      });
-    }, 300);
-  })
-}
-
-const user = await getUserDetails();
-
-console.log(user); // 'You have passed the exam'
-
-```
-
-Our asynchronus function, as you can see, returns the data without error, hence our result prints the data. One more thing to notice, our *console.log *waits until the *getUserDetails* resolves.
-
----
-
-Example two when error is returned.
-
-```js
-
-const getUserDetails = (id) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(function() {
-      reject('something went wrong');
-    }, 300);
-  })
-}
-
-const user = await getUserDetails();
-
-console.log(user); // Uncaught something went wrong
-
-```
-Our asynchronus function, as you can see, returns the data **with** error, hence we see the uncaught error.
-
----
-
-## How to handle the erros using await
-
-To handle any possible errors received from the asynchronus function, we can utilise the try/catch block.
-
-```js
-
-const getUserDetails = (id) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(function() {
-      reject('something went wrong');
-    }, 300);
-  })
-}
-
-try {
-  const user = await getUserDetails();
-  // Handle success here
-} catch(error) {
-  // Handle error here
-}
+![Alt text](/assets/max-version-of-fiber-node.png)
