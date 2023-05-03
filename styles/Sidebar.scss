@@ -40,6 +40,19 @@
             }
         }
     }
+    .donate {
+        background: #8BC34A;
+        padding: 10px 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        a {
+            color: white;
+            font-weight: bold;
+        }
+    }
     .position {
         position: 10px 20px;
     }
