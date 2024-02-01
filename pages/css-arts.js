@@ -104,11 +104,11 @@ const cssArts = props => {
                 <div className="pagination-wrapper">
                     <div className="buttons">
                         { 
-                            step > 1 &&  <button type="button" className="button prev" onClick={prevPage}> {'<'} </button>
+                            step > 1 &&  <button type="button" className="button prev" onClick={prevPage}> {'prev'} </button>
                         }
 
                         {
-                        step < Math.ceil(ALL_TEMPLATES.length / LIMIT) && <button type="button" className="button next" onClick={nextPage}> {'>'} </button>
+                        step < Math.ceil(ALL_TEMPLATES.length / LIMIT) && <button type="button" className="button next" onClick={nextPage}> {'next'} </button>
                         }
                     
                         
